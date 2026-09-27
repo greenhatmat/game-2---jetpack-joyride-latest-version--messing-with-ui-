@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://brgifjsysv05g"]
+
+[ext_resource type="Script" uid="uid://bc7b3637sv0jm" path="res://scripts/wall.gd" id="1_2ktk7"]
+[ext_resource type="Texture2D" uid="uid://bydvhkatms724" path="res://Firefly_RemoveBackground.png" id="2_2ktk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xlc"]
+size = Vector2(12.5, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e00m8"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(0, 0, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdtm6"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(210, 0, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5nbe"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(420, 0, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1e5f"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(630, 0, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu87e"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(0, 316, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnv8b"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(210, 316, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmnwi"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(420, 316, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbeqh"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(630, 316, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7ec6"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(0, 632, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0o0o"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(210, 632, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38k74"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(420, 632, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7yut"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(630, 632, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1y5"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(0, 948, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h27kt"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(210, 948, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_modca"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(420, 948, 210, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgsn1"]
+atlas = ExtResource("2_2ktk7")
+region = Rect2(630, 948, 210, 316)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dveb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e00m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdtm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5nbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1e5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu87e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnv8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmnwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbeqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7ec6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0o0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38k74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7yut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq1y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h27kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_modca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgsn1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Wall" type="Node2D" unique_id=1437744949 groups=["wall"]]
+z_index = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_2ktk7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=191930261 groups=["wall"]]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1775246549]
+position = Vector2(-0.25, 2.500001)
+shape = SubResource("RectangleShape2D_s1xlc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2115198346]
+position = Vector2(-0.5, 2)
+scale = Vector2(0.2399994, 0.39999926)
+sprite_frames = SubResource("SpriteFrames_dveb6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1046989470]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

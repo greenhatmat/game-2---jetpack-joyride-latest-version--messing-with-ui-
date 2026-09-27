@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dunkgrpmhfkc4"]
+
+[ext_resource type="Script" uid="uid://c4qcjc6iggqay" path="res://scripts/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://wsngismkef0s" path="res://Gemini_Generated_Image_l8s74fl8s74fl8s7.png" id="2_q8ifc"]
+
+[node name="Arrow" type="Node2D" unique_id=1418787593]
+script = ExtResource("1_23jat")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1183901379]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_q8ifc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1779466640]
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=212545514]
+scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(-510, -3, -235, -139, -236, -43, 187, -45, 262, -118, 454, -119, 460, -61, 413, 0, 465, 69, 463, 115, 259, 118, 199, 53, -232, 52, -234, 142)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1255882166]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

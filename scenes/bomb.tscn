@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c7w0d7edp85r6"]
+
+[ext_resource type="Texture2D" uid="uid://onf7jk5nmn15" path="res://assets/Gemini_Generated_Image_4whmxx4whmxx4whm.png" id="1_4kkau"]
+[ext_resource type="Script" uid="uid://cjhb67s7vl2ne" path="res://scripts/bomb.gd" id="1_vpdcx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dveb6"]
+radius = 41.0
+
+[node name="bomb" type="Node2D" unique_id=230107555 groups=["bomb"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vpdcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1910298400]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_4kkau")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=71389708 groups=["bomb"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=451211511]
+position = Vector2(2, 15)
+shape = SubResource("CircleShape2D_dveb6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1888413866]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
